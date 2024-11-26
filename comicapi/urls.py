@@ -1,13 +1,13 @@
-   from django.urls import path, include   
-   from rest_framework import viewsets
-   from .views import DogViewSet, BreedViewSet
+from django.urls import path, include   
+from rest_framework.routers import DefaultRouter
+from .views import ComicViewSet
 
-   router = DefaultRouter()
-   router.register(r'comics', ComicsViewSet)
+router = DefaultRouter()
+router.register(r'comics', ComicViewSet)
    
-   urlpatterns = [
-       path('', include(router.urls)),
-   ]
+urlpatterns = [
+    path('', include(router.urls)),
+    ]
 
 
 
